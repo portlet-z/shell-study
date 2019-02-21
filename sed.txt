@@ -1,0 +1,89 @@
+  803  sed -n '5,+3p' /etc/passwd
+  804  sed -n '/bash/p' /etc/passwd
+  805  cat -n /etc/passed
+  807  sed -n '/\/sbin\/nologin/p' /etc/passwd
+  808  sed -n '/^hdfs/p' /etc/passwd
+  809  sed -n '/^dbus/p' /etc/passwd
+  810  sed -n '/^sshd/,/^dbus/p' /etc/passwd
+  811  sed -n '4,^/sshd' /etc/passwd
+  812  sed -n '4,/^sshd' /etc/passwd
+  813  sed -n '4,/^sshd/p' /etc/passwd
+  814  sed -n '/root/,10p' /etc/passwd
+  818  sed '1/d' passwd
+  819  sed '1d' passwd
+  821  sed -n '1d' passwd
+  823  sed -i '1d' passwd
+  825  sed -i '1,3d' passwd
+  830  sed -i '/\/sbin\/nologin/d' passwd
+  836  sed -i '/mail/,/ftp/d' passwd
+  839  sed -i '/^mail/,/^ftp/d' passwd
+  841  sed -i '/\/bin\/bash/a This is user which can login to system' passwd
+  844  sed -i '/\/bin\/bash/i This is user which can login to system' passwd
+  848  sed -i '/^mail/,/^ftp/i AAAAAAAAAAAAAA' passwd
+  851  sed -i '/^mail/,/^ftp/r AAAAAAAAAAAAAA' passwd
+  853  sed -i '/^mail/,/^ftp/r AAAAAAAAAAAAAA' passwd
+  855  sed -i '/root/r AAAAAAAAAAAAAA' passwd
+  858  sed '/\/bin\/bash/w ./login.txt' passwd
+  861  sed  -n '/\/bin\/bash/w ./login.txt' passwd
+  864  sed  -n '/\/bin\/bash/w ./login.txt' passwd
+  868  sed -i 's/\/bin\/bash/\/BIN\/BASH/g' passwd
+  871  sed -i 's/\/sbin\/nologin/\/SBIN\/NOLOGIN/g' passwd
+  874  sed -i 's/root/ROOT' passwd
+  875  sed -i 's/root/ROOT/g' passwd
+  878  sed -i 's/root/ROOT/' passwd
+  881  sed -i 's/root/ROOT/2g' passwd
+  883  sed -n '/\/sbin\/nologin/=' passwd
+  885  sed -n '1,+2p' passwd
+  888  sed -n '1,+2p' passwd
+  889  sed -n '20p' passwd
+  890  sed -n '8,15p' passwd
+  891  sed '8,+5p' passwd
+  892  sed -n '8,+5p' passwd
+  893  sed -n '/^mail/p' passwd
+  894  sed -n '/^mail/,/^ftp/p' passwd
+  895  sed -n '8,/\/sbin\/nologin/p' passwd
+  896  sed -n '/\/bin\/bash/,5p' passwd
+  904  sed -n '1,10d' passwd
+  905  sed  '1,10d' passwd
+  907  sed -i '1d' passwd
+  909  sed -i '15d' passwd
+  912  sed -i '8,14d' passwd
+  914  sed -i '/\/sbin/\/nologin/d' passwd
+  915  sed -i '/\/sbin\/nologin/d' passwd
+  927  sed -i '/^mail/,/^ftp/d' passwd
+  929  sed -i '/\/sbin\/nologin/,13d' passwd
+  935  sed -i '/\/sbin\/nologin/,13d' passwd
+  939  sed -i '5,/\sbin\/nologin/d' passwd
+  942  sed -i '/^ftp/,$d' passwd
+  959  sed -i '/^#/d;/^$/d' nginx.conf
+  961  sed -i '/[:blank:]*#/d' nginx.conf
+  965  sed -i '/^#/d;/^$/d;/[:blank:]*#/d' nginx.conf
+  968  sed -i 's/^[^#]/\*&/g' nginx.conf
+  971  sed -i '1s/root/ROOT/' passwd
+  973  sed -i '1s/root/ROOT/g' passwd
+  976  sed -i '5,10s/\sbin\/nologin/\bin\/bash/g' passwd
+  978  sed -i '5,10s/\/sbin\/nologin/\bin\/bash/g' passwd
+  981  sed -i '/\/sbin\/nologin/s/login/LOGIN/g' passwd
+  984  sed -i '/^root/,/mail/s/bin/HADOOP/g' passwd
+  986  sed -i '/^root/,15s/nologin/SPARK/g' passwd
+  989  sed -i '15,/^sshd/s/bin/BIN/g' passwd
+  993  sed -i 's/[0-9]+//g' passwd
+  995  sed -i 's/[0-9]*//g' passwd
+  997  sed -i 's/[0-9]*//g' file.txt
+  999  sed -i 's/[A-Z]*/&/g' file.txt
+ 1001  history | grep sed
+ 1002  sed -i '10a Add Line Begind' passwd
+ 1004  sed -i '10i Add Line Begind' passwd
+ 1007  sed -i '10,20a Add Line Begind' passwd
+ 1010  sed -i '/\/bin\/bash/a Insert Line For /bin/bash Begind' passwd
+ 1013  sed -i '/^mail/i Add Line Before' passwd
+ 1015  history | grep sed | grep #
+ 1016  history | grep sed | grep \#
+ 1017  sed -i '20r /etc/fatab' passwd
+ 1020  sed -i '20r /etc/fstab' passwd
+ 1022  sed -i '/\/bin\/bash/r /etc/inittab' passwd
+ 1025  sed -i '/\/bin\/bash/r /etc/inittab' passwd
+ 1028  sed -i '/\/bin\/bash/r /etc/inittab' passwd
+ 1033  sed -i '/^ftp/,18r /etc/vconsole.conf' passwd
+ 1035  sed -i '/\/bin\/bash/w ./temp.txt' passwd
+ 1038  sed -i '10,/^ntp/w ./temp.txt' passwd
