@@ -1,0 +1,222 @@
+  546  cat passwd | awk '{print $1}'
+  547  cat passwd | awk '{print NF}'
+  548  awk 'BEGIN{}patern{command}END{}' file
+  549  awk 'BEGIN{}{print $1}END{} passwd
+  550  awk 'BEGIN{}{print $1}END{}' passwd
+  551  awk 'BEGIN{FS=":"}{print $1}END{}' passwd
+  552  awk 'BEGIN{FS=":"}{print $2}END{}' passwd
+  553  awk 'BEGIN{FS=":"}{print $3}END{}' passwd
+  555  awk '{print $1}' list
+  556  awk 'BEGIN{FS=":"}15,20{print $3}END{}' passwd
+  557  awk 'BEGIN{FS=":"}/15,20/{print $3}END{}' passwd
+  558  awk 'BEGIN{FS=":"}/^mail/{print $3}END{}' passwd
+  560  cat list | awk '{print NF}'
+  561  cat list | awk '{print NR}'
+  562  awk '{print NR}' list passwd
+  563  awk '{print FNR}' list passwd
+  564  awk '{print FNR}' list passwd /etc/initab
+  565  awk '{print FNR}' list passwd /etc/inittab
+  567  awk 'BEGIN{FS="|"}{print $2}END{}' list
+  568  awk 'BEGIN{FS="|"}{print $2}END{}' list | awk 'BEGIN{FS=":"}{print $2}'
+  569  awk 'BEGIN{FS="|"}{print $2}END{}' list | awk 'BEGIN{FS=":"}{print $1}'
+  570  awk 'BEGIN{FS="|";RS="---"}{print $2}END{}' list
+  573  awk 'BEGIN{RS="-"}{print $1}END{}' rr
+  577  awk 'BEGIN{RS="|"}{print $0}'
+  578  awk 'BEGIN{RS="|"}{print $0}' list
+  579  awk 'BEGIN{RS="--"}{print $0}' list
+  580  awk 'BEGIN{RS="--";FS="|"}{print $1}' list
+  581  awk 'BEGIN{RS="--";FS="|";ORS="@"}{print $1}' list
+  582  awk 'BEGIN{RS="--";FS="|";ORS="@"}{print $3}' list
+  583  awk 'BEGIN{RS="--";FS="|";OFS="@"}{print $0}' list
+  584  awk 'BEGIN{RS="--";FS="|";OFS="@"}{print $1$2}' list
+  585  awk 'BEGIN{RS="--";FS="|";OFS="-"}{print $1$2}' list
+  586  awk 'BEGIN{RS="--";FS="|";OFS="-"}{print $1,$2}' list
+  587  awk '{print FILENAME}' list
+  588  awk 'BEGIN{RS="--"}{print FILENAME}' list
+  589  awk 'BEGIN{RS="--"}{print ARGC}' list
+  590  awk '{print ARGC}' list
+  591  awk '{print ARGC}' list passwd
+  593  awk 'BEGIN{FS=":"}{print $7}' passwd
+  594  awk 'BEGIN{FS=":"}{print $NF}' passwd
+  595  awk 'BEGIN{FS=":"}{print $1}' passwd
+  596  awk 'BEGIN{FS=":"}{printf $1}' passwd
+  597  awk 'BEGIN{FS=":"}{printf "%s\r" $1}' passwd
+  598  awk 'BEGIN{FS=":"}{printf "%s", $1}' passwd
+  599  awk 'BEGIN{FS=":"}{printf "%s\r", $1}' passwd
+  600  awk 'BEGIN{FS=":"}{printf "%s\\", $1}' passwd
+  601  awk 'BEGIN{FS=":"}{printf "%s\\r", $1}' passwd
+  602  awk 'BEGIN{FS=":"}{printf "%s\n", $1}' passwd
+  603  awk 'BEGIN{FS=":"}{printf "%s%s\n", $1,$7}' passwd
+  604  awk 'BEGIN{FS=":"}{printf "%s@@%s\n", $1,$7}' passwd
+  605  awk 'BEGIN{FS=":"}{printf "%20s%s\n", $1,$7}' passwd
+  606  awk 'BEGIN{FS=":"}{printf "%s %20s\n", $1,$7}' passwd
+  607  awk 'BEGIN{FS=":"}{printf "%20s %20s\n", $1,$7}' passwd
+  608  awk 'BEGIN{FS=":"}{printf "%s- %20s\n", $1,$7}' passwd
+  609  awk 'BEGIN{FS=":"}{printf "%s %-20s\n", $1,$7}' passwd
+  610  awk 'BEGIN{FS=":"}{printf "%-20s %20s\n", $1,$7}' passwd
+  611  awk 'BEGIN{FS=":"}{printf "%-20s %-s\n", $1,$7}' passwd
+  612  awk 'BEGIN{FS=":"}{printf "%d\n", $3}' passwd
+  613  awk 'BEGIN{FS=":"}{printf "%d\n", $1}' passwd
+  614  awk 'BEGIN{FS=":"}{printf "%d\n", $3}' passwd
+  616  awk 'BEGIN{FS=":"}{printf "%-d\n", $3}' passwd
+  617  awk 'BEGIN{FS=":"}{printf "%-5d\n", $3}' passwd
+  618  awk 'BEGIN{FS=":"}{printf "%5d\n", $3}' passwd
+  619  awk 'BEGIN{FS=":"}{printf "%f\n", $3}' passwd
+  620  awk 'BEGIN{FS=":"}{printf "%2f\n", $3}' passwd
+  621  awk 'BEGIN{FS=":"}{printf "%.2f\n", $3}' passwd
+  622  awk 'BEGIN{FS=":"}{printf "%x\n", $3}' passwd
+  623  awk 'BEGIN{FS=":"}{printf "%0\n", $3}' passwd
+  624  awk 'BEGIN{FS=":"}{printf "%o\n", $3}' passwd
+  625  awk 'BEGIN{FS=":"}{printf "%#x\n", $3}' passwd
+  626  awk 'BEGIN{FS=":"}{printf "%#o\n", $3}' passwd
+  627  awk 'BEGIN{FS=":"}{printf "%e\n", $3}' passwd
+  628  awk 'BEGIN{FS=":"}/root/{print $0}' passwd
+  629  awk 'BEGIN{FS=":"}/^ftp/{print $0}' passwd
+  631  awk 'BEGIN{FS=":"}$3<50{print $0}' pas
+  632  awk 'BEGIN{FS=":"}$3<50{print $0}' passwd
+  633  awk 'BEGIN{FS=":"}$3<50{print $3}' passwd
+  634  awk 'BEGIN{FS=":"}$3>50{print $3}' passwd
+  635  awk 'BEGIN{FS=":"}$7=="/bin/bash"{print $7}' passwd
+  636  awk 'BEGIN{FS=":"}$7!="/bin/bash"{print $7}' passwd
+  637  awk 'BEGIN{FS=":"}$3~/[0-9]{3,}/{print $3}' passwd
+  638  awk 'BEGIN{FS=":"}$0!~/\/sbin\/nologin/ {print $0}' passwd
+  639  awk 'BEGIN{FS=":"}$1=="mail" || $1=="ftp" {print $0}' passwd
+  640  awk 'BEGIN{FS=":"}$3<50 && $4>50 {print $0}' passwd
+  641  awk 'BEGIN{var=20;var1="hello"; print var,var1}'
+  642  awk 'BEGIN{num1=20;num2+=num1; print num1,num2}'
+  643  awk 'BEGIN{num1=20;num2=num1+30; print num1,num2}'
+  644  awk 'BEGIN{num1=20;num2=30; print num1-num2}'
+  645  awk 'BEGIN{num1=2;num2=3; print num1**num2}'
+  646  awk 'BEGIN{num1=2;num2=3; print num1^num2}'
+  647  awk 'BEGIN{x=1; y=x++; print y}'
+  648  awk 'BEGIN{x=1; y=++x; print y}'
+  653  awk '/^$/{index=0; index++}END{print index}' /etc/services
+  654  awk '/^$/{index++}END{print index}' /etc/services
+  655  awk 'BEGIN{index=0}/^$/{index++}END{print index}' /etc/services
+  656  awk '/^$/{sum++}END{print sum}' /etc/services
+  662  awk '{total=$2+$3+$4+$5; AVG=total/4;}END{printf "%s%d%d%d%d.2%f\n" $1,$2,$3,$4,$5,AVG}' student.txt
+  663  awk '{total=$2+$3+$4+$5; AVG=total/4;}END{printf "%s%d%d%d%d%f\n" $1,$2,$3,$4,$5,AVG}' student.txt
+  664  awk '{total=$2+$3+$4+$5; AVG=total/4; printf "%s%d%d%d%d%f\n" $1,$2,$3,$4,$5,AVG}' student.txt
+  666  awk '{print $1}' student.txt
+  667  awk '{print $2}' student.txt
+  668  awk '{print $5}' student.txt
+  669  awk '{total=$2+$3+$4+$5; AVG=total/4; printf "%s%d%d%d%d%f\n",$1,$2,$3,$4,$5,AVG}' student.txt
+  670  awk '{total=$2+$3+$4+$5; AVG=total/4; printf "%-8s%5d%5d%5d%5d%.2f\n",$1,$2,$3,$4,$5,AVG}' student.txt
+  671  awk '{total=$2+$3+$4+$5; AVG=total/4; printf "%-8s%5d%5d%5d%-5d%.2f\n",$1,$2,$3,$4,$5,AVG}' student.txt
+  672  awk '{total=$2+$3+$4+$5; AVG=total/4; printf "%-8s%-5d%-5d%-5d%-5d%.2f\n",$1,$2,$3,$4,$5,AVG}' student.txt
+  678  awk 'BEGIN{FS=":"}$3>50 && $3<100{print $3}'
+  679  awk 'BEGIN{FS=":"}$3>50 && $3<100{print $3}' passwd
+  680  awk 'BEGIN{FS=":"}{if($3>50) print $3}' passwd
+  681  awk 'BEGIN{FS=":"}{if($3>50 && $3<100) print $3}' passwd
+  682  awk 'BEGIN{FS=":"}{if($3<50 || $3>100) print $3}' passwd
+  683  awk 'BEGIN{FS=":"}{if($3<50) printf "%-10s%-10s%-5d\n", $1, "小于50的 UID", $3}' passwd
+  684  vim scripts.awk
+  685  awk -F scripts.awk passwd
+  686  awk -f scripts.awk passwd
+  687  vim scripts.awk
+  688  awk -f scripts.awk passwd
+  689  vim scripts.awk
+  690  awk -f scripts.awk passwd
+  691  vim scripts.awk
+  692  awk -f scripts.awk passwd
+  693  vim scripts.awk
+  694  awk -f scripts.awk passwd
+  695  vim while.awk
+  696  awk -f while.awk
+  700  vim while.awk
+  704  vim while.awk
+  709  vim while.awk
+  710  awk -F while.awk
+  711  awk -f while.awk
+  712  vim while.awk
+  713  vim for.awk
+  714  awk -f for.awk
+  715  vim do-while.awk
+  716  awk -f do-while.awk
+  717  vim do-while.awk
+  718  awk -f do-while.awk
+  719  sz for.awk
+  721  sz while.awk
+  723  sz do-while.awk
+  725  sz scripts.awk
+  727  vim student.awk
+  728  awk -f student.awk student.txt
+  729  vim student.awk
+  730  awk -f student.awk student.txt
+  731  vim student.awk
+  732  awk -f student.awk student.txt
+  733  vim student.awk
+  734  awk -f student.awk student.txt
+  735  vim student.awk
+  736  awk -f student.awk student.txt
+  737  vim student.awk
+  739  vim student.awk
+  740  awk -f student.awk student.txt
+  741  vim student.awk
+  742  awk -f student.awk student.txt
+  743  vim student.awk
+  744  awk -f student.awk student.txt
+  745  vim student.awk
+  746  awk -f student.awk student.txt
+  750  man awk
+  752  vim example1.awk
+  753  awk -f example1.awk passwd
+  754  vim example1.awk
+  755  awk -f example1.awk passwd
+  756  vim example1.awk
+  757  awk -f example1.awk passwd
+  758  vim example1.awk
+  759  awk -f example1.awk passwd
+  760  vim example1.awk
+  761  awk -f example1.awk passwd
+  762  vim example1.awk
+  763  awk -f example1.awk passwd
+  764  awk 'BEGIN{str="I hava a dream";location=index(str,ea); print location}'
+  765  awk 'BEGIN{str="I hava a dream";location=index(str,"ea"); print location}'
+  766  awk 'BEGIN{str="I hava a dream";location=match(str,"ea"); print location}'
+  767  awk 'BEGIN{str="I hava a dream";location=match(str,"^a"); print location}'
+  768  awk 'BEGIN{str="I hava a dream";location=match(str,"/a/"); print location}'
+  769  awk 'BEGIN{str="I hava a dream";location=match(str,"a"); print location}'
+  770  awk 'BEGIN{str="Hadoop is a bigdata Framework";print toupper(str)}'
+  771  awk 'BEGIN{str="Hadoop Zookeeper YARN Kafka Spark Storm HDFS"; split(str, arr, " "); print arr}'
+  772  awk 'BEGIN{str="Hadoop Zookeeper YARN Kafka Spark Storm HDFS"; split(str, arr, " "); print arr[1]}'
+  773  awk 'BEGIN{str="Hadoop Zookeeper YARN Kafka Spark Storm HDFS"; split(str, arr, " "); print arr[2]}'
+  774  awk 'BEGIN{str="Hadoop Zookeeper YARN Kafka Spark Storm HDFS"; split(str, arr, " "); for(a in arr) print a}'
+  775  awk 'BEGIN{str="Hadoop Zookeeper YARN Kafka Spark Storm HDFS"; split(str, arr, " "); for(a in arr) print arr[a]}'
+  776  awk 'BEGIN{str="Tranction 2345 Start:Select * from master"; location=match(str, "[0-9]"); print location}'
+  777  awk 'BEGIN{str="Tranction 2345 Start:Select * from master"; location=match(str, /[0-9]/); print location}'
+  778  awk 'BEGIN{str="transaction start"; subStr=substr(str, 4, 5); print subStr}'
+  779  awk 'BEGIN{str="transaction start"; print substr(str, 4, 5)}'
+  780  awk 'BEGIN{str="transaction start"; print substr(str, 4)}'
+  781  awk 'BEGIN{str="transaction 2345, haha 5432"; print sub(/[0-9]+/, "$", str)}'
+  782  awk 'BEGIN{str="transaction 2345, haha 5432"; gsub(/[0-9]+/, "$", str); print str}'
+  783  awk 'BEGIN{str="transaction 2345, haha 5432"; sub(/[0-9]+/, "$", str); print str}'
+  784  awk 'BEGIN{str="transaction 2345, haha 5432"; count=sub(/[0-9]+/, "$", str); print count,str}'
+  785  awk 'BEGIN{str="transaction 2345, haha 5432"; count=gsub(/[0-9]+/, "$", str); print count,str}'
+  786  awk -V
+  789  awk '{print $num1}'
+  790  awk 'BEGIN{print $num1}'
+  791  awk -v num2=$num1 -v var1=$var 'BEGIN{print num2, var1}'
+  792  awk -v num2=$num1 -v var1="$var" 'BEGIN{print num2, var1}'
+  793  awk -v num2="$num1" -v var1="$var" 'BEGIN{print num2, var1}'
+  794  awk -F ":" '{print $3}' passwd
+  843  awk 'BEGIN{str="A B C D E F LiLei Hanmeimei"; split(str, array, " "); for(i=1;i<length(array);i++) print array[i]}'
+  844  awk 'BEGIN{str="A B C D E F LiLei Hanmeimei"; split(str, array, " "); for(a in array) print a}'
+  845  awk 'BEGIN{str="A B C D E F LiLei Hanmeimei"; split(str, array, " "); for(a in array) print array[a]}'
+  846  awk 'BEGIN{array["var1"]="allen"; array["var2"]="hanmeimei"; for(a in array) print array[a]}'
+  869  awk 'BEGIN{printf "%-10s%-10s%-10s%-10s%-10s\n", "Name", "Chinese", "Math", "English"}'
+  870  awk 'BEGIN{printf "%-10s%-10s%-10s%-10s%-10s\n", "Name", "Chinese", "Math", "English", "Physics"}'
+  871  awk 'BEGIN{printf "%-10s%-10s%-10s%-10s%-10s\n", "Name", "Chinese", "Math", "English", "Physics"}{total=$2+$3+$4+$5; print total}' student.txt
+  872  awk 'BEGIN{printf "%-10s%-10s%-10s%-10s%-10s\n", "Name", "Chinese", "Math", "English", "Physics"}{total=$2+$3+$4+$5; printf "%-10s%-10d%-10d%-10d%-10d%-10d", $1,$2,$3,$4,$5,total}' student.txt
+  873  awk 'BEGIN{printf "%-10s%-10s%-10s%-10s%-10s\n", "Name", "Chinese", "Math", "English", "Physics"}{total=$2+$3+$4+$5; printf "%-10s%-10d%-10d%-10d%-10d%-10d\n", $1,$2,$3,$4,$5,total}' student.txt
+  874  awk 'BEGIN{printf "%-10s%-10s%-10s%-10s%-10s%-10s\n", "Name", "Chinese", "Math", "English", "Physics","Total"}{total=$2+$3+$4+$5; printf "%-10s%-10d%-10d%-10d%-10d%-10d\n", $1,$2,$3,$4,$5,total}' student.txt
+  957  awk 'BEGIN{OFS=","}{print $1}' test
+  959  awk 'BEGIN{RS="--";FS="|";OFS="-"}{print $1,$2}' list
+  961  awk 'BEGIN{RS="--";FS="|";ORS="@"}{print $1}' list
+  962  awk 'BEGIN{ORS=","}{print $1}' test
+  963  awk 'BEGIN{ORS=","}{print "$1"}' test
+  964  awk 'BEGIN{ORS=","}{print \"$1\"}' test
+  965  awk 'BEGIN{ORS=","}{print \\"$1\\"}' test
+  966  awk 'BEGIN{ORS=","}{printf \'$1\'}' test
+  969  awk 'BEGIN{ORS=","}{print "\'"$1"\'"}' test
+  970  awk 'BEGIN{ORS=","}{print "\""$1"\""}' test
